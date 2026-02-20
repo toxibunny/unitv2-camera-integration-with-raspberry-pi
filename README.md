@@ -20,40 +20,31 @@ trying to get that damned piece of... hardware doing something useful via usb co
 
 
 Install fswebcam (if not already there):
-bash
-Copy
-
-sudo apt-get install fswebcam
+   ```bash
+   sudo apt-get install fswebcam
 
 
 Place imageserver.py in /home/m5stack/imageserver/ and make it executable:
-bash
-Copy
-
-chmod +x /home/m5stack/imageserver/imageserver.py
+   ```bash
+   chmod +x /home/m5stack/imageserver/imageserver.py
 
 
 Run it manually (for now):
-bash
-Copy
+   ```bash
+   python3 /home/m5stack/imageserver/imageserver.py
 
-python3 /home/m5stack/imageserver/imageserver.py
+(cron jobs aren't available on that cam afaik)
 
-(Or set up a cron job if you’re feeling fancy.)
 2. Pi Side (The Hero We Deserve)
 
 Save get_image.py to /home/sarahbot/ and make it executable:
-bash
-Copy
-
-chmod +x /home/sarahbot/get_image.py
+   ```bash
+   chmod +x /home/sarahbot/get_image.py
 
 
 Test it:
-bash
-Copy
-
-python3 /home/sarahbot/get_image.py
+   ```bash
+   python3 /home/sarahbot/get_image.py
 
 
 Weep with joy as latest.jpg appears.
@@ -62,10 +53,8 @@ Weep with joy as latest.jpg appears.
 
 Python 3 (🙏)
 requests (for HTTP magic):
-bash
-Copy
-
-pip install requests
+   ```bash
+   pip install requests
 
 
 Passwordless SSH between Pi and camera (or prepare for password hell).
@@ -74,7 +63,6 @@ A dream (optional but recommended).
 ⚠ Known Issues (AKA "Features")
 
 The camera’s Flask server might crash if you look at it wrong.
-If the Pi reboots, you’ll need to restart get_image.py (unless you set up a cron job, you overachiever).
 The images are 320x240 because we paid for resolution with our sanity.
 
 🚀 Next Steps (For the Brave)
